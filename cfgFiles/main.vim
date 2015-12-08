@@ -1,10 +1,29 @@
 " VIM configuration
 let maplocalleader = "\<Space>"
 
-" PLUGIN NAME : pathogen
+" PLUGIN NAME : vundle 
 " Purpose : easy installation of additional plugins in vim 
-execute pathogen#infect()
-set runtimepath+=~/.vim
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" list of plugins installed by vundle
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'lyuts/vim-rtags'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'bling/vim-airline'
+Plugin 'majutsushi/tagbar'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'morhetz/gruvbox'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'vim-scripts/a.vim'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+" end of vundle specific initialization
 
 " source file which conteins configuration of diffrent modules
 source ~/.vim/vimConfig/cfgFiles/dbgCfg.vim
