@@ -7,14 +7,14 @@ execute pathogen#infect()
 set runtimepath+=~/.vim
 
 " source file which conteins configuration of diffrent modules
-source ~/.vim/cfgFiles/dbgCfg.vim
-source ~/.vim/cfgFiles/lookAndFeelCfg.vim
-source ~/.vim/cfgFiles/autoCompleteCfg.vim
-source ~/.vim/cfgFiles/projectViewCfg.vim
-source ~/.vim/cfgFiles/outlineCfg.vim
-source ~/.vim/cfgFiles/srcNavigationCfg.vim
-source ~/.vim/cfgFiles/toolBarsCfg.vim
-source ~/.vim/cfgFiles/editorCfg.vim
+source ~/.vim/vimConfig/cfgFiles/dbgCfg.vim
+source ~/.vim/vimConfig/cfgFiles/lookAndFeelCfg.vim
+source ~/.vim/vimConfig/cfgFiles/autoCompleteCfg.vim
+source ~/.vim/vimConfig/cfgFiles/projectViewCfg.vim
+source ~/.vim/vimConfig/cfgFiles/outlineCfg.vim
+source ~/.vim/vimConfig/cfgFiles/srcNavigationCfg.vim
+source ~/.vim/vimConfig/cfgFiles/toolBarsCfg.vim
+source ~/.vim/vimConfig/cfgFiles/editorCfg.vim
 
 " Run post startup part 
 " TODO -> start vim agent in one terminal/console
