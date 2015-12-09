@@ -2,6 +2,10 @@
 
 " PLUGIN NAME : ctrlp
 " Purpose : opening and navigation betwean buffers
+" conf -> set star of search directory to nearest .git/.svn/cwd direcotry
+let g:ctrlp_working_path_mode = 'rw'
+" conf -> search only by file name, not by file path
+let g:ctrlp_by_filename = 1
 " TODO configure ctrl-P
 
 " PLUGIN NAME : A

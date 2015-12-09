@@ -16,6 +16,7 @@ set number " enable line numbering
 set ruler  " show line numbers and columns for current cursor position
 
 " Functions
+" Hide and restore side panels, split will be preserved
 let g:outline_closed_by_user = 0
 let g:side_widows_are_open = 1
 function! FullScreenToggle()
@@ -30,3 +31,18 @@ function! FullScreenToggle()
         let g:side_widows_are_open = 1
     endif
 endfunction
+
+" Zoom / Restore window.
+function! s:ZoomToggle() abort
+    if exists('t:zoomed') && t:zoomed
+        execute t:zoom_winrestcmd
+        let t:zoomed = 0
+    else
+        let t:zoom_winrestcmd = winrestcmd()
+        resize
+        vertical resize
+        let t:zoomed = 1
+    endif
+endfunction
+command! ZoomToggle call s:ZoomToggle()
+nnoremap <C-S-x> :ZoomToggle<CR>

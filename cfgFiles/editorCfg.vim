@@ -12,7 +12,8 @@ imap <C-K> <c-o>:pyf ~/.vim/configuration/formater/clang-format.py<cr>
 set tabstop=4 " four spaces
 set expandtab " change tabulation to spaces
 set autoindent " copy indent from previous line
-set hlsearch incsearch "configure searching
+set hlsearch incsearch " configure searching
+set cursorline " highlight line which contain cursor
 
 " save shortcuts
 nnoremap <c-s> :w<CR>
@@ -21,4 +22,8 @@ inoremap <c-s> <Esc>:w<CR>
 " move current line one up/down
 noremap <C-S-up> :call feedkeys( line(',')==1 ? '' : 'ddkP' )<CR>
 noremap <C-S-down> ddp 
+
+" highlight all acourence of current word
+nnoremap <F4> *
+inoremap <F4> <Esc>*
 
