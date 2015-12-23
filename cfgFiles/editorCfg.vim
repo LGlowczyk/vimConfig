@@ -5,8 +5,9 @@
 " conf -> TODO
 
 " Code formating
-map <C-K> :pyf ~/.vim/configuration/formater/clang-format.py<cr>
-imap <C-K> <c-o>:pyf ~/.vim/configuration/formater/clang-format.py<cr>
+nnoremap <C-i> va{:pyf /usr/share/clang/clang-format.py<cr>
+vnoremap <C-i> :pyf /usr/share/clang/clang-format.py<cr>
+inoremap <C-i> <c-o>:pyf /usr/share/clang/clang-format.py<cr>    
 
 " Core vim options configuration
 " conf -> tabulation
@@ -18,7 +19,11 @@ set expandtab " change tabulation to spaces
 set autoindent " copy indent from previous line
                " this is default indention policy 
                " will be used with non source code files
-set shiftwidth=0 " automatic indent will use indent values from tabstop
+set shiftwidth=0  " automatic indent will use indent values from tabstop
+set cinoptions=:0l1h0(0 " align case with switch (they will be in one line)
+                    " align case content
+                    " don't indent public, private, protected
+                    " inside of if bool expr align to the opening (
 " TODO check cindent and cinoptions description
 " conf -> rest
 set hlsearch incsearch " configure searching
