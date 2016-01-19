@@ -20,6 +20,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-scripts/a.vim'
+Plugin 'rking/ag.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required

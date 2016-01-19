@@ -1,12 +1,31 @@
 " Configuration of navigation in source code, tracking dependecy etc.
 
+" PLUGIN NAME : ag.vim
+" Reg : ag (aka silver searcher)
+" Purpose : Integration of 'ag' with vim. (ag == very fast grep)
+" conf -> set ag command used by this plugin with all default params
+" conf -> '-t' search 'text' files
+" conf -> '-f' fallow symlinks
+" conf -> '-depth' fallow almost all dirs
+let g:ag_prg="ag --column --nogroup --noheading -t -f --depth 100"
+" conf -> higlight searched pattern in result window
+let g:ag_highlight=1
+
 " PLUGIN NAME : ctrlp
 " Purpose : opening and navigation betwean buffers
 " conf -> set star of search directory to nearest .git/.svn/cwd direcotry
 let g:ctrlp_working_path_mode = 'rw'
 " conf -> search only by file name, not by file path
 let g:ctrlp_by_filename = 1
-" TODO configure ctrl-P
+" conf -> using regex mode gives more accurate results
+let g:ctrlp_regexp = 1
+" conf -> quicker startup achieved by preserving caches between vim sessions
+let g:ctrlp_clear_cache_on_exit = 1
+" Mappings :
+" quick access to all currently opened buffers/files
+nnoremap <C-S-e> :CtrlPBuffer<cr>
+inoremap <C-S-e> <esc>:CtrlPBuffer<cr>
+vnoremap <C-S-e> <esc>:CtrlPBuffer<cr>
 
 " PLUGIN NAME : A
 " Purpose : switch cpp <-> h
