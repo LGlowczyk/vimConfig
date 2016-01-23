@@ -18,7 +18,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
-Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'wincent/command-t'
 Plugin 'vim-scripts/a.vim'
 Plugin 'rking/ag.vim'
 
