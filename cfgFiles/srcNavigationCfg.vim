@@ -11,25 +11,23 @@ let g:ag_prg="ag --column --nogroup --noheading -t -f --depth 100"
 " conf -> higlight searched pattern in result window
 let g:ag_highlight=1
 
-" PLUGIN NAME : command-t (need to be compiled -> see help)
-" Purpose : opening and navigation between buffers
-" conf -> set start of search directory to pwd 
-let g:CommandTTraverseSCM = "pwd"
-" conf -> using find utility should be faster than default ruby
-let g:CommandTFileScanner = "find"
-" conf -> 100 should be fine for reverse domain notation and it is almost all
-let g:CommandTMaxDepth = 100
-" conf -> very large project should fit in 100k limit of files
-let g:CommandTMaxFiles = 100000
+" PLUGIN NAME : ctrlp
+" Purpose : opening and navigation betwean buffers
+" conf -> set star of search directory to nearest .git/.svn/cwd direcotry
+let g:ctrlp_working_path_mode = 'rw'
+" conf -> search only by file name, not by file path
+let g:ctrlp_by_filename = 1
+" conf -> using regex mode gives more accurate results
+let g:ctrlp_regexp = 1
+" conf -> quicker startup achieved by preserving caches between vim sessions
+let g:ctrlp_clear_cache_on_exit = 0
+" conf -> custom matching function (FelikZ/ctrlp-py-matcher) to speed up
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 " Mappings :
-" use the same mapping for start searching as ctrl-p
-nnoremap <C-p> :CommandT<cr>
-inoremap <C-p> <esc>:CommandT<cr>
-vnoremap <C-p> <esc>:CommandT<cr>
 " quick access to all currently opened buffers/files
-nnoremap <C-S-e> :CommandTBuffer<cr>
-inoremap <C-S-e> <esc>:CommandTBuffer<cr>
-vnoremap <C-S-e> <esc>:CommandTBuffer<cr>
+nnoremap <C-S-e> :CtrlPBuffer<cr>
+inoremap <C-S-e> <esc>:CtrlPBuffer<cr>
+vnoremap <C-S-e> <esc>:CtrlPBuffer<cr>
 
 " PLUGIN NAME : A
 " Purpose : switch cpp <-> h
