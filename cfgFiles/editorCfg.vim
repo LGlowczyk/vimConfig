@@ -5,9 +5,8 @@
 " conf -> TODO
 
 " Code formating
-nnoremap <C-i> va{:pyf /usr/share/clang/clang-format.py<cr>
-vnoremap <C-i> :pyf /usr/share/clang/clang-format.py<cr>
-inoremap <C-i> <c-o>:pyf /usr/share/clang/clang-format.py<cr>    
+nnoremap <localleader>i va{:pyf /usr/share/clang/clang-format.py<cr>
+vnoremap <localleader>i :pyf /usr/share/clang/clang-format.py<cr>
 
 " Core vim options configuration
 " conf -> tabulation
