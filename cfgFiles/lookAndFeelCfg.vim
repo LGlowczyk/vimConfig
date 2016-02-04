@@ -14,6 +14,9 @@ nnoremap <F12> :call FullScreenToggle()<cr>
 syntax enable " syntax coloring
 set number " enable line numbering
 set ruler  " show line numbers and columns for current cursor position
+if has("gui_running") "Maximize gvim window
+  set lines=999 columns=999
+endif
 
 " Functions
 " Hide and restore side panels, split will be preserved
