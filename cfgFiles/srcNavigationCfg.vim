@@ -25,9 +25,8 @@ let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 " Mappings :
 " quick access to all currently opened buffers/files
-nnoremap <C-S-e> :CtrlPBuffer<cr>
-inoremap <C-S-e> <esc>:CtrlPBuffer<cr>
-vnoremap <C-S-e> <esc>:CtrlPBuffer<cr>
+nnoremap <localleader>b :CtrlPBuffer<cr>
+vnoremap <localleader>b <esc>:CtrlPBuffer<cr>
 
 " PLUGIN NAME : A
 " Purpose : switch cpp <-> h
