@@ -32,9 +32,13 @@ set cursorline " highlight line which contain cursor
 nnoremap <c-s> :w<CR>
 inoremap <c-s> <Esc>:w<CR>
 
-" move current line one up/down
-noremap <C-S-up> :call feedkeys( line(',')==1 ? '' : 'ddkP' )<CR>
-noremap <C-S-down> ddp 
+" move current lines one up/down
+nnoremap <C-S-up> :call feedkeys( line(',')==1 ? '' : 'ddkP' )<CR>
+nnoremap <C-S-down> ddp 
+inoremap <C-S-up> :call feedkeys( line(',')==1 ? '' : 'ddkP' )<CR>
+inoremap <C-S-down> ddp 
+vnoremap <C-S-up> :m '<-2<CR>gv=gv
+vnoremap <C-S-down> :m '>+1<CR>gv=gv
 
 " highlight all acourence of current word
 nnoremap <F4> *
