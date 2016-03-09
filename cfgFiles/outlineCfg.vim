@@ -16,8 +16,8 @@ vnoremap <S-F12> <Esc>:call VimIDETagbarToggle()<CR>v
 inoremap <S-F12> <Esc>:call VimIDETagbarToggle()<CR>a
 
 " open tagbar/outline for search, auto close window after usage
-nnoremap <localleader>o :TagbarOpenAutoClose<CR>
-vnoremap <localleader>o <Esc>:TagbarOpenAutoClose<CR>
+nnoremap <localleader>o :TagbarOpenAutoClose<CR>/\c
+vnoremap <localleader>o <Esc>:TagbarOpenAutoClose<CR>/\c
 
 " Wrapper for TagbarToggle which sets global flag outline_closed_by_user
 function! VimIDETagbarToggle()
