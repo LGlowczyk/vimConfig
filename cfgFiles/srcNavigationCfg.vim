@@ -17,8 +17,6 @@ let g:ag_highlight=1
 let g:ctrlp_working_path_mode = 'rw'
 " conf -> search only by file name, not by file path
 let g:ctrlp_by_filename = 1
-" conf -> using regex mode gives more accurate results
-let g:ctrlp_regexp = 1
 " conf -> quicker startup achieved by preserving caches between vim sessions
 let g:ctrlp_clear_cache_on_exit = 0
 " conf -> custom matching function (FelikZ/ctrlp-py-matcher) to speed up
