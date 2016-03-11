@@ -27,6 +27,7 @@ set cinoptions=:0l1h0(0 " align case with switch (they will be in one line)
 " conf -> rest
 set hlsearch incsearch " configure searching
 set cursorline " highlight line which contain cursor
+hi CursorLine guibg=black " increase visibility of current line
 
 " save shortcuts
 nnoremap <c-s> :w<CR>
