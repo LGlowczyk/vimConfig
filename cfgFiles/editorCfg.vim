@@ -42,6 +42,7 @@ vnoremap <C-S-up> :m '<-2<CR>gv=gv
 vnoremap <C-S-down> :m '>+1<CR>gv=gv
 
 " highlight all acourence of current word
-nnoremap <F4> *
-inoremap <F4> <Esc>*
+" TODO this isn't ideal solution because it's changing jumplist
+nnoremap <F4> *``
+inoremap <F4> <Esc>*``
 
