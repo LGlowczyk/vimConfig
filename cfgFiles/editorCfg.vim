@@ -4,6 +4,19 @@
 " Purpose : handle comment/uncomment text
 " conf -> TODO
 
+" quick way to norrow down content of current buffer
+" TODO currently this modifies buffer, it's unsafe, it would be better 
+"      to use some smart folding
+" remove lines which contains selected pattern or pattern under cursor
+nnoremap <localleader>ea yiw:g/<c-r>"/d<CR><c-o>
+vnoremap <localleader>ea y<esc>:g/<c-r>"/d<CR><c-o>
+" filter only lines which contains selected pattern or pattern under cursor
+nnoremap <localleader>sa yiw:v/<c-r>"/d<CR><c-o>
+vnoremap <localleader>sa y<esc>:v/<c-r>"/d<CR><c-o>
+" erase all empty lines
+nnoremap <localleader>ee :g/^$/d<CR><c-o>
+vnoremap <localleader>ee <esc>:g/^$/d<CR><c-o>
+
 " Code formating
 nnoremap <localleader>i va{:pyf /usr/share/clang/clang-format.py<cr>
 vnoremap <localleader>i :pyf /usr/share/clang/clang-format.py<cr>
