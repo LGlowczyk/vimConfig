@@ -17,6 +17,10 @@ vnoremap <localleader>sa y<esc>:v/<c-r>"/d<CR><c-o>
 nnoremap <localleader>ee :g/^$/d<CR><c-o>
 vnoremap <localleader>ee <esc>:g/^$/d<CR><c-o>
 
+" close the curent buffer and switch to the next one. DON'T close the vim
+nnoremap <localleader>q :bp<bar>sp<bar>bn<bar>bd<CR>
+vnoremap <localleader>q <esc>:bp<bar>sp<bar>bn<bar>bd<CR>
+
 " Code formating
 nnoremap <localleader>i va{:pyf /usr/share/clang/clang-format.py<cr>
 vnoremap <localleader>i :pyf /usr/share/clang/clang-format.py<cr>
