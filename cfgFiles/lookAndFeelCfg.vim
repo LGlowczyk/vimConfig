@@ -6,6 +6,8 @@
 colorscheme gruvbox
 " conf -> choose dark theme
 set background=dark
+" conf -> set highest contrast of gruvebox theme
+let g:gruvbox_contrast_dark = "hard"
 
 " Full screen for IDE (hide side windows)
 nnoremap <F12> :call FullScreenToggle()<cr>

@@ -66,6 +66,11 @@ nnoremap <localleader>fv :call rtags#FindVirtuals()<CR>
 " TODO auto start of rdm -> posible new feature in rtags
 " TODO it would be nice if reference would be highlited in current buffers -> check some for locList
 
+" TODO where this mapping should be stored? Here or projectViewCfg?
+" focus file in project explorer
+nnoremap <localleader>ff :NERDTreeFind<cr>
+vnoremap <localleader>ff <esc>:NERDTreeFind<cr>
+
 " Core vim options configuration
 set showmatch " jump to matching bracket to show it
 
