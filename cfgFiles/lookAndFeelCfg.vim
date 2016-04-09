@@ -20,6 +20,15 @@ if has("gui_running") "Maximize gvim window
   set lines=999 columns=999
 endif
 
+" highlight letter which are on the code line limit
+if !exists("g:codeLineMaxWidth")
+    " if user didn't define max line width use default 80 chars    
+    let g:codeLineMaxWidth = 80
+endif
+highlight ColorColumn guibg=purple
+let borderColumnPattern = '\%'.string(codeLineMaxWidth + 1).'v'
+call matchadd('ColorColumn', borderColumnPattern, 100)
+
 " Functions
 " Hide and restore side panels, split will be preserved
 let g:outline_closed_by_user = 0
