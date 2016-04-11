@@ -63,3 +63,6 @@ vnoremap <C-S-down> :m '>+1<CR>gv=gv
 nnoremap <F4> *``
 inoremap <F4> <Esc>*``
 
+" copy text between vim instances
+vnoremap <localleader>yi :w! ~/multiVimBuffer.txt<CR>
+nnoremap <localleader>pi :r ~/multiVimBuffer.txt<CR>
