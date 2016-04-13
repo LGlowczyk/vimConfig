@@ -20,3 +20,6 @@ nnoremap <localleader>st :YcmCompleter GetType<CR>
 " vim internal futures
 " TODO configure auto completition in vim command line with wildmenu and wildmode
 set wildmenu
+
+" show current unfinished vim command in the corner
+set showcmd
