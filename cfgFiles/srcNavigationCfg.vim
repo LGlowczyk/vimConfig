@@ -73,6 +73,7 @@ vnoremap <localleader>ff <esc>:NERDTreeFind<cr>
 
 " Core vim options configuration
 set showmatch " jump to matching bracket to show it
+set ignorecase " improve search
 
 " moving mappings
 noremap <C-up> {

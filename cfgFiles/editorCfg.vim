@@ -27,7 +27,7 @@ vnoremap <localleader>i :pyf /usr/share/clang/clang-format.py<cr>
 
 " Core vim options configuration
 " conf -> tabulation
-set tabstop=4 " four spaces
+set tabstop=2 " four spaces
 set expandtab " change tabulation to spaces
 " conf -> indent (for src file cindent will be used, it is enabled by 
 "         filetype command in main.vim , req. by vundle)
