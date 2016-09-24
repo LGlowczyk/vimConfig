@@ -19,6 +19,11 @@ set ruler  " show line numbers and columns for current cursor position
 if has("gui_running") "Maximize gvim window
   set lines=999 columns=999
 endif
+" Hide unused gui tools
+set guioptions-=m " remove menu bar
+set guioptions-=T " remove toolbar
+set guioptions-=r " remove right-hand scroll bar
+set guioptions-=L " remove left-hand scroll bar
 
 " highlight letter which are on the code line limit
 if !exists("g:codeLineMaxWidth")
