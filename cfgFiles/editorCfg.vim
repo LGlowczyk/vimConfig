@@ -4,6 +4,19 @@
 " Purpose : handle comment/uncomment text
 " conf -> TODO
 
+" PLUGIN NAME : easymotion
+" Purpose : quick jumping with cursor between locations 
+" conf -> Disable default mappings
+let g:EasyMotion_do_mapping = 0 
+" conf -> Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" <loacalleader>g{char}{char}{label}`
+nmap <localleader>g <Plug>(easymotion-overwin-f2)
+" conf -> Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+" conf -> JK motions: Line motions
+map <localleader>j <Plug>(easymotion-j)
+map <localleader>k <Plug>(easymotion-k)
+
 " quick way to norrow down content of current buffer
 " TODO currently this modifies buffer, it's unsafe, it would be better 
 "      to use some smart folding

@@ -1,0 +1,9 @@
+" project ROOT (cwd)
+let PROJECT_ROOT_DIR = getcwd()
+
+" project folder with main CMakeList.txt or Makefile
+let BUILD_FOLDER = g:PROJECT_ROOT_DIR 
+
+" project build cmd
+" it should work executed from main project dir
+set makeprg=make\ -C\ ./build\ -j4

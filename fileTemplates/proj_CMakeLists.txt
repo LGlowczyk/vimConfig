@@ -1,0 +1,7 @@
+# should be updated
+project(proj_name)
+
+set ( SRC main.cpp )
+
+# should be updated
+add_executable( exe_name  ${SRC} )
