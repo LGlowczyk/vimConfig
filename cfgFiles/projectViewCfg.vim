@@ -10,11 +10,10 @@ let YCM_CONF_FILE_NAME = ".ycm_extra_conf.py"
 let g:NERDTreeShowBookmarks = 1
 
 " build current project
-" TODO connect with .vimrc proj commands
 " TODO now my IDE :) will not ask nor save your files before build
-nnoremap <F6> :!make --directory=build<CR>
-vnoremap <F6> <Esc>:!make --directory=build<CR>
-inoremap <F6> <Esc>:!make --directory=build<CR>
+nnoremap <F6> :make<CR>
+vnoremap <F6> <Esc>:make<CR>
+inoremap <F6> <Esc>:make<CR>
 
 " open/close NerdTree
 nnoremap <C-F12> :NERDTreeToggle<CR>
