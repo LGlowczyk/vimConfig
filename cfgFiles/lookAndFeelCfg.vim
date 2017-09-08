@@ -31,7 +31,7 @@ if !exists("g:codeLineMaxWidth")
     let g:codeLineMaxWidth = 80
 endif
 highlight ColorColumn guibg=purple
-let borderColumnPattern = '\%'.string(codeLineMaxWidth + 1).'v'
+let borderColumnPattern = '\%'.string(g:codeLineMaxWidth + 1).'v'
 call matchadd('ColorColumn', borderColumnPattern, 100)
 
 " Functions
