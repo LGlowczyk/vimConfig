@@ -6,8 +6,6 @@
 let g:tagbar_width = 55 
 " conf -> path to mandatory ctags
 let g:tagbar_ctags_bin = '/usr/bin/ctags'
-" conf -> auto open tagbar when supported buffer is open but only if user didn't expl. close it 
-autocmd BufRead * nested : if g:outline_closed_by_user == 0 | call tagbar#autoopen(0) | endif
 
 " Mapings :
 " open tagbar

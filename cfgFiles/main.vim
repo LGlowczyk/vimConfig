@@ -28,6 +28,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'vimwiki/vimwiki'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
