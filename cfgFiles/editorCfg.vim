@@ -58,6 +58,8 @@ set cinoptions=:0l1h0(0 " align case with switch (they will be in one line)
 set hlsearch incsearch " configure searching
 set cursorline " highlight line which contain cursor
 hi CursorLine guibg=black " increase visibility of current line
+" conf -> enable usual deleting in insert mode
+set backspace=indent,eol,start
 
 " save shortcuts
 nnoremap <c-s> :w<CR>
@@ -76,6 +78,6 @@ vnoremap <C-S-down> :m '>+1<CR>gv=gv
 nnoremap <F4> *``
 inoremap <F4> <Esc>*``
 
-" copy text between vim instances
-vnoremap <localleader>yi :w! ~/multiVimBuffer.txt<CR>
-nnoremap <localleader>pi :r ~/multiVimBuffer.txt<CR>
+" copy text to and from system buffer
+vnoremap <localleader>y "+y 
+nnoremap <localleader>p "+p
