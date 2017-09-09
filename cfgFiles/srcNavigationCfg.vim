@@ -1,15 +1,19 @@
 " Configuration of navigation in source code, tracking dependecy etc.
 
-" PLUGIN NAME : ag.vim
-" Reg : ag (aka silver searcher)
-" Purpose : Integration of 'ag' with vim. (ag == very fast grep)
-" conf -> set ag command used by this plugin with all default params
-" conf -> '-t' search 'text' files
-" conf -> '-f' fallow symlinks
-" conf -> '-depth' fallow almost all dirs
-let g:ag_prg="ag --column --nogroup --noheading -t -f --depth 100"
-" conf -> higlight searched pattern in result window
-let g:ag_highlight=1
+" PLUGIN NAME : grepper
+" Req : ag (aka silver searcher)
+" Purpose : Ench. async grep for vim
+" Initialize g:grepper with empty directory
+let g:grepper = {}
+" conf -> highlight searched pattern
+let g:grepper.highlight = 1
+" conf -> don't switch focus automatically
+let g:grepper.switch = 0
+" search for current word and populate side buffer 
+" with result with small context
+nnoremap <localleader>ws :Grepper -cword -noprompt -side<cr>
+" find word under the cursor in files from cd
+nnoremap <localleader>w :Grepper -cword -noprompt<cr>
 
 " PLUGIN NAME : ctrlp
 " Purpose : opening and navigation betwean buffers
@@ -44,17 +48,20 @@ let g:rtagsUseDefaultMappings = 0
 " show information about symbol under cursor
 nnoremap <localleader>fi :call rtags#SymbolInfo()<CR>
 " jump to definition of symbol under cursor
-nnoremap <localleader>fd :call rtags#JumpTo()<CR>
+nnoremap <localleader>fd :call rtags#JumpTo(g:SAME_WINDOW)<CR>
 " jump to definition in vertical window
-nnoremap <localleader>fdv :call rtags#JumpTo("vert")<CR>
+nnoremap <localleader>fdv :call rtags#JumpTo(g:V_SPLIT)<CR>
+" jump to definition in horizontal window
+nnoremap <localleader>fds :call rtags#JumpTo(g:H_SPLIT)<CR>
 " TODO test this maping on class which hass parent class
 nnoremap <localleader>fp :call rtags#JumpToParent()<CR>
 " hmm find reference? :) 
 nnoremap <localleader>fr :call rtags#FindRefs()<CR> 
 " TODO what this is doing
 " nnoremap <localleader>fn :call rtags#FindRefsByName(input("Pattern? ")<CR>
-" search for symbols in current file (support some regex)
-nnoremap <localleader>fs :call rtags#FindSymbols(input("Pattern? "))<CR>
+" search for parent and derived classes
+nnoremap <localleader>fS :call rtags#FindSuperClasses()<CR>
+nnoremap <localleader>fs :call rtags#FindSubClasses()<CR>
 " typical refresh this should probably moved into more general function 
 " not only for r-tags
 nnoremap <F5> :call rtags#ReindexFile()<CR>
