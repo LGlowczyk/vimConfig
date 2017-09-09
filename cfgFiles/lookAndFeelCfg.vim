@@ -1,13 +1,9 @@
 " Configuration file which contain all configuration connected only with the way vim looks, vim "windows" etc.
 
-" PLUGIN NAME : gruvbox
+" PLUGIN NAME : vim-monokai
 " Purpose : color theme
 " conf -> enable theme
-colorscheme gruvbox
-" conf -> choose dark theme
-set background=dark
-" conf -> set highest contrast of gruvebox theme
-let g:gruvbox_contrast_dark = "hard"
+colorscheme monokai
 
 " Full screen for IDE (hide side windows)
 nnoremap <F12> :call FullScreenToggle()<cr>
