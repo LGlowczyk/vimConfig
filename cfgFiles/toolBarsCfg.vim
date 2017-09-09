@@ -4,7 +4,7 @@
 " Purpose : status bar
 " conf -> install power-fonts for power symbols
 " conf -> choose proper font
-set guifont=Liberation\ Mono\ for\ Powerline\ 10
+set guifont=Liberation\ Mono\ for\ Powerline\ 11
 " conf -> enable proper coding for power line symbols
 "set encoding=utf-8
 " conf -> create map for symbols if not created already
@@ -15,8 +15,6 @@ endif
 let g:airline_powerline_fonts = 1
 " conf ->  Do not collapse the status line while having multiple windows
 let g:airline_inactive_collapse = 0	
-" conf -> chose proper default theme
-let g:airline_theme = 'murmur'
 " conf -> show list of buffers it there is only one tab
 let g:airline#extensions#tabline#enabled = 1
 " cont -> show buffer number for easy switching
