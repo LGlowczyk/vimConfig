@@ -3,5 +3,9 @@ project(proj_name)
 
 set ( SRC main.cpp )
 
+set (CMAKE_CXX_STANDARD 14)
+
+set (CMAKE_BUILD_TYPE Debug)
+
 # should be updated
 add_executable( exe_name  ${SRC} )

@@ -80,6 +80,7 @@ vnoremap <localleader>ff <esc>:NERDTreeFind<cr>
 
 " Core vim options configuration
 set showmatch " jump to matching bracket to show it
+set matchpairs+=<:> " enable matching,jumping between <>, useful for templates
 set ignorecase " improve search
 
 " moving mappings
