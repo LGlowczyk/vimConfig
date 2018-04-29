@@ -4,6 +4,8 @@ let PROJECT_ROOT_DIR = getcwd()
 " project folder with main CMakeList.txt or Makefile
 let BUILD_FOLDER = g:PROJECT_ROOT_DIR 
 
+" TODO project specific max line width (here or in some coding rules file?)
+
 " project build cmd
 " it should work executed from main project dir
 set makeprg=make\ -C\ ./build\ -j4

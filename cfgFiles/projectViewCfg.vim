@@ -9,11 +9,37 @@ let YCM_CONF_FILE_NAME = ".ycm_extra_conf.py"
 " conf -> show bookmarks on startup
 let g:NERDTreeShowBookmarks = 1
 
+function! CPeek()
+  " Store the original window number
+  let l:winnr = winnr()
+
+  " Open a window to show the current list of erros
+  copen
+  " small qf window during compilation
+  resize 4
+
+  " If focus changed jump to the last window
+  if l:winnr !=# winnr()
+    wincmd p
+  endif
+endfunction
+
+function! ShowErrorOrClose()
+  let l:numOfErrors = len(filter(getqflist(), 'v:val.valid'))
+  if l:numOfErrors == 0
+    cclose
+  else
+    cn
+  endif
+endfunction
+
+let g:asyncrun_exit = "call ShowErrorOrClose()"
+
 " build current project
 " TODO now my IDE :) will not ask nor save your files before build
-nnoremap <F6> :make<CR>
-vnoremap <F6> <Esc>:make<CR>
-inoremap <F6> <Esc>:make<CR>
+nnoremap <F6> :call CPeek()<CR>:AsyncRun -program=make<CR>
+vnoremap <F6> <Esc>:call CPeek()<CR>:AsyncRun -program=make<CR>
+inoremap <F6> <Esc>:call CPeek()<CR>:AsyncRun -program=make<CR>
 
 " open/close NerdTree
 nnoremap <C-F12> :NERDTreeToggle<CR>
@@ -58,7 +84,7 @@ augroup END
 command! -nargs=1 CreateProject :call CreateProject(<f-args>)
 
 function! CreateProject(projectName)
-  py3file  ~/.vim/vimConfig/scripts/projectMng.py
+  pyfile  ~/.vim/vimConfig/scripts/projectMng.py
 
   " if project was created without errors source it and configure 
   let s:projectFilePath = "./" . g:PROJECT_FILE_NAME

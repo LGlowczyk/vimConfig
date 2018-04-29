@@ -17,8 +17,13 @@ let g:airline_powerline_fonts = 1
 let g:airline_inactive_collapse = 0	
 " conf -> show list of buffers it there is only one tab
 let g:airline#extensions#tabline#enabled = 1
-" cont -> show buffer number for easy switching
+" conf -> show buffer number for easy switching
 let g:airline#extensions#tabline#buffer_idx_mode = 1
+" conf -> disable displaying file format if it is expected/standard value
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+" conf enable idication of error in airline
+let g:airline#extensions#ycm#enabled = 1
+
 " Mapings :
 " switch buffer basing on displayed number
 nmap <localleader>1 <Plug>AirlineSelectTab1

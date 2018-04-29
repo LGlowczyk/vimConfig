@@ -30,6 +30,10 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'vimwiki/vimwiki'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'crusoexia/vim-monokai'
+Plugin 'romainl/vim-qf'
+Plugin 'dominikduda/vim_current_word'
+Plugin 'skywind3000/asyncrun.vim'
+Plugin 'pboettch/vim-cmake-syntax'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -44,6 +48,14 @@ source ~/.vim/vimConfig/cfgFiles/outlineCfg.vim
 source ~/.vim/vimConfig/cfgFiles/srcNavigationCfg.vim
 source ~/.vim/vimConfig/cfgFiles/toolBarsCfg.vim
 source ~/.vim/vimConfig/cfgFiles/editorCfg.vim
+
+augroup refreshVimrc
+  au!
+  au BufWritePost .vimrc so %
+augroup END
+
+" disabled due to problem with async run
+let g:gf_auto_open_quickfix = 0
 
 " Run post startup part 
 " TODO -> start vim agent in one terminal/console

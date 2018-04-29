@@ -17,6 +17,11 @@ let g:EasyMotion_smartcase = 1
 map <localleader>j <Plug>(easymotion-j)
 map <localleader>k <Plug>(easymotion-k)
 
+" PLUGIN NAME : TODO
+" automatic highliting of word under currsor
+" conf -> highlight ocurence but not current word
+let g:vim_current_word#highlight_current_word = 0
+
 " quick way to norrow down content of current buffer
 " TODO currently this modifies buffer, it's unsafe, it would be better 
 "      to use some smart folding
@@ -35,6 +40,8 @@ nnoremap <localleader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 vnoremap <localleader>q <esc>:bp<bar>sp<bar>bn<bar>bd<CR>
 
 " Code formating
+" TODOs
+"  don't rellya on the hardcoded location of clang format
 nnoremap <localleader>i va{:pyf /usr/share/clang/clang-format.py<cr>
 vnoremap <localleader>i :pyf /usr/share/clang/clang-format.py<cr>
 
@@ -73,7 +80,7 @@ inoremap <C-S-down> ddp
 vnoremap <C-S-up> :m '<-2<CR>gv=gv
 vnoremap <C-S-down> :m '>+1<CR>gv=gv
 
-" highlight all acourence of current word
+" manual highlight all acourence of current word
 " TODO this isn't ideal solution because it's changing jumplist
 nnoremap <F4> *``
 inoremap <F4> <Esc>*``

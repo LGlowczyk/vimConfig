@@ -2,8 +2,6 @@
 
 " PLUGIN NAME : YouCompleteMe
 " Purpose : autocompletition
-" conf -> set fallback ycm with default C++ flags
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/fallbackFlags/.ycm_extra_conf.py'
 " conf -> auto close preview window after leaving insertion mode
 let g:ycm_autoclose_preview_window_after_insertion = 1
 " conf -> postpone triggering of identifier base help until more info about
@@ -14,6 +12,8 @@ let g:ycm_min_num_of_chars_for_completion = 4
 " Mapings :
 " show type of symbol under cursor
 nnoremap <localleader>st :YcmCompleter GetType<CR>
+" fix error in current line
+nnoremap <localleader>ce :YcmCompleter FixIt<CR>
 " TODO enable reading data from tag files, disabled by default
 " TODO show/hide diagnostic window
 " TODO change color of warings to blue

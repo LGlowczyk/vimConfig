@@ -45,8 +45,9 @@ nnoremap <localleader>sv :AV<CR>
 " conf -> disable default mappings they use leader
 let g:rtagsUseDefaultMappings = 0
 " Mapings :
+nnoremap <localleader>ft :YcmCompleter GetType<CR>
 " show information about symbol under cursor
-nnoremap <localleader>fi :call rtags#SymbolInfo()<CR>
+nnoremap <localleader>fi :YcmCompleter GetDoc<CR>
 " jump to definition of symbol under cursor
 nnoremap <localleader>fd :call rtags#JumpTo(g:SAME_WINDOW)<CR>
 " jump to definition in vertical window

@@ -5,8 +5,6 @@ import sys
 import shutil
 import readline
 
-from pathlib import Path
-
 def CopyAndFillProjCmakeList(projName):
     pathToCMakeTemplate = os.path.expanduser("~/.vim/vimConfig/fileTemplates/proj_CMakeLists.txt")
     pathToNewCmakeLists = os.path.abspath("./CMakeLists.txt")
@@ -34,9 +32,7 @@ def CopySourceFiles():
     shutil.copyfile(pathToStartSourceTemplate, projDir)
 
 def CreateProject(projName):
-    projectCnfFile = Path("./.vimrc")
-     
-    if projectCnfFile.is_file():
+    if os.path.isfile("./.vimrc"):
         print ("Current directory already contain project. Aborting")
         return
 
