@@ -34,6 +34,8 @@ Plugin 'romainl/vim-qf'
 Plugin 'dominikduda/vim_current_word'
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'pboettch/vim-cmake-syntax'
+Plugin 'junegunn/fzf.vim'
+Plugin 'martinda/Jenkinsfile-vim-syntax'
 
 call vundle#end()            " required
 filetype plugin indent on    " required

@@ -15,6 +15,22 @@ nnoremap <localleader>ws :Grepper -cword -noprompt -side<cr>
 " find word under the cursor in files from cd
 nnoremap <localleader>w :Grepper -cword -noprompt<cr>
 
+" PLUGIN NANE : fzf
+" conf -> where to find it
+set rtp+=~/.fzf
+" conf -> where to lunch it
+if has("terminal")
+  let g:fzf_launcher = 'xterm -fa "DejaVu Sans Mono for Powerline" -fs 14 - maximized -e bash -ic %s'
+endif
+" conf -> find line
+nnoremap <localleader>l :BLine<CR>
+" conf -> find tag in the buffer
+nnoremap <localleader>o :BTags<CR>
+vnoremap <localleader>o <esc>:BTags<CR>
+" conf -> find tag in all files (except exlueded) in the project
+nnoremap <localleader>go :Tags<CR>
+vnoremap <localleader>go <esc>:Tags<CR>
+
 " PLUGIN NAME : ctrlp
 " Purpose : opening and navigation betwean buffers
 " conf -> set star of search directory to nearest .git/.svn/cwd direcotry
