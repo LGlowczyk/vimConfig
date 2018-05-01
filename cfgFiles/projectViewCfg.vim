@@ -29,7 +29,9 @@ function! ShowErrorOrClose()
   if l:numOfErrors == 0
     cclose
   else
+    " show content of the line with the error
     cn
+    normal zv
   endif
 endfunction
 

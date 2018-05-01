@@ -67,6 +67,8 @@ set cursorline " highlight line which contain cursor
 hi CursorLine guibg=black " increase visibility of current line
 " conf -> enable usual deleting in insert mode
 set backspace=indent,eol,start
+" conf -> foldmethod type
+set foldmethod=syntax
 
 " save shortcuts
 nnoremap <c-s> :w<CR>
@@ -88,3 +90,21 @@ inoremap <F4> <Esc>*``
 " copy text to and from system buffer
 vnoremap <localleader>y "+y 
 nnoremap <localleader>p "+p
+
+" folding configuration
+function! UnfoldUntillCore()
+  " TODO support not only class marker [struct, big enums...]
+  let firstClassLn = search("^ *class [^;]*$", "e")
+  if firstClassLn > 0
+    while foldclosed(firstClassLn) != -1
+      normal zr
+    endwhile
+    " and one more unfold to show conent of the class
+    normal zr
+  endif
+endfunction
+
+augroup PartialyUnfold
+  autocmd!
+  autocmd BufReadPost * : call UnfoldUntillCore()
+augroup END
