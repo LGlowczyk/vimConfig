@@ -19,8 +19,8 @@ nnoremap <localleader>w :Grepper -cword -noprompt<cr>
 " conf -> where to find it
 set rtp+=~/.fzf
 " conf -> where to lunch it
-if has("terminal")
-  let g:fzf_launcher = 'xterm -fa "DejaVu Sans Mono for Powerline" -fs 14 - maximized -e bash -ic %s'
+if (has("terminal") == 0)
+  let g:fzf_launcher = 'xterm -fa "DejaVu Sans Mono for Powerline" -fs 14 -maximized -e bash -ic %s'
 endif
 " conf -> find line
 nnoremap <localleader>l :BLine<CR>
